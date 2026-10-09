@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Leethiyal 💝 | Queen of My Heart</title>
+    <meta name="description" content="A cinematic, cute, romantic and emotional birthday surprise created especially for Leethiyal." />
+    <meta property="og:title" content="Happy Birthday Leethiyal 💝" />
+    <meta property="og:description" content="A cinematic, cute, romantic and emotional birthday surprise created especially for Leethiyal." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Background Canvas for Deep Space Stars and Golden Dust -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Interactive Touch & Cursor Fairy Dust Sparkle Canvas -->
+    <canvas id="sparkle-canvas" aria-hidden="true"></canvas>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Ambient Glowing Nebulas -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+    <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+    <!-- Cinematic Vignette -->
+    <div class="vignette" aria-hidden="true"></div>
+
+    <!-- Floating containers for Hearts and Rose Petals -->
+    <div id="floating-hearts-container" aria-hidden="true"></div>
+    <div id="rose-petals-container" aria-hidden="true"></div>
+
+    <!-- Royal Constellation Journey Bar (Top Chapter Navigation) -->
+    <header id="royal-journey-bar" class="royal-journey-bar" aria-label="Surprise Chapters">
+      <div class="journey-track">
+        <div class="journey-header-title">
+          <span class="crown-icon">👑</span>
+          <span class="journey-label">Surprise Journey for Queen Leethiyal 💝</span>
+          <span class="sparkle-icon">✨</span>
+        </div>
+        <div class="journey-steps" role="navigation" aria-label="Chapters">
+          <div class="journey-step active" data-step="1" title="Chapter 1: The Royal Intro">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="2" title="Chapter 2: Whispers of Love">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="3" title="Chapter 3: Sweet Wish">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="4" title="Chapter 4: Cherished Thoughts">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="5" title="Chapter 5: Words From Soul">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="6" title="Chapter 6: Love Letter">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="7" title="Chapter 7: Rose Petals">
+            <span class="step-dot">✦</span>
+          </div>
+          <div class="step-connector"></div>
+          <div class="journey-step" data-step="8" title="Chapter 8: Grand Coronation">
+            <span class="step-dot">👑</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Application Container -->
+    <main id="app">
+      <!-- ==========================================
+           SCREEN 0: PROLOGUE - THE SACRED BIRTHDAY DATE 10.10.2026
+           ========================================== -->
+      <section id="screen-0" class="screen active" aria-label="Birthday Date Prologue">
+        <div class="glass-panel royal-panel prologue-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <span class="prologue-date-pill">👑 A SACRED DATE IN DESTINY 👑</span>
+
+          <!-- Dynamic Today's Date Indicator -->
+          <div class="today-date-card" aria-label="Current Date">
+            <span class="today-icon" aria-hidden="true">🗓️</span>
+            <span class="today-label">Today's Date:</span>
+            <span id="dynamic-current-date" class="today-val">Loading date...</span>
+          </div>
+
+          <!-- Teaser Question: Today have a special day... Why? -->
+          <div class="prologue-teaser-box">
+            <h1 class="prologue-teaser-heading">
+              Today have a special day... <br/>
+              <span class="prologue-why-text">Do you know WHY? 🤔✨</span>
+            </h1>
+            <p class="prologue-hint-text">
+              Out of all 365 days, this very date holds the greatest miracle of my life...
+            </p>
+          </div>
+
+          <!-- The Magical 10.10.2026 Royal Calendar Tile -->
+          <div class="prologue-calendar-card" id="prologue-calendar-card" role="button" tabindex="0" aria-label="Birthday Date 10.10.2026">
+            <div class="cal-header">
+              <span class="cal-month">OCTOBER 2026</span>
+              <span class="cal-heart">💝</span>
+            </div>
+            <div class="cal-body">
+              <span class="cal-day-num">10</span>
+              <span class="cal-full-date">10 . 10 . 2026</span>
+              <span id="cal-tag-queen" class="cal-tag cal-tag-locked">🔒 Tap button 2 times to reveal...</span>
+            </div>
+            <div class="cal-shimmer" aria-hidden="true"></div>
+          </div>
+
+          <!-- Interactive Action & Reveal Section -->
+          <div id="prologue-reveal-stage" class="prologue-reveal-stage">
+            <div class="btn-wrapper" id="why-btn-wrapper">
+              <button id="btn-why-special" class="btn-cinematic" type="button" aria-label="Discover why today is special">
+                <span>Why is Today So Special? 💝</span>
+              </button>
+              <p id="dodge-hint-why" class="dodge-hint" aria-live="polite"></p>
+            </div>
+
+            <!-- Answer Card (Reveals upon tapping Why is today special) -->
+            <div id="prologue-answer-card" class="prologue-answer-card" style="display: none;" aria-live="polite">
+              <div class="answer-sparkle-halo" aria-hidden="true"></div>
+              <span class="answer-badge">✨ THE SACRED REASON ✨</span>
+              <h2 class="answer-title">
+                Because on <span class="gold-date-glow">10.10.2026</span>... <br/>
+                <span class="answer-queen-name">LEETHIYAL 💝</span> was born!
+              </h2>
+              <p class="answer-message">
+                The world was blessed with the sweetest angel, and my heart was given its eternal Queen. Today belongs completely to YOU! 👑💖
+              </p>
+
+              <div class="btn-wrapper" style="margin-top: 1.6rem;">
+                <button id="btn-prologue-continue" class="btn-cinematic" type="button" aria-label="Enter royal birthday celebration">
+                  <span>Enter Your Royal Surprise ✨</span>
+                </button>
+                <p id="dodge-hint-prologue" class="dodge-hint" aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 1: CINEMATIC INTRO
+           ========================================== -->
+      <section id="screen-1" class="screen" aria-label="Birthday Introduction">
+        <div class="glass-panel royal-panel">
+          <!-- Ornamental corner filigrees -->
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <!-- Royal Crown Emblem -->
+          <div class="royal-tiara-container intro-crown" aria-hidden="true">
+            <svg class="royal-tiara-svg" viewBox="0 0 120 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 38 L60 6 L106 38 L86 20 L60 32 L34 20 Z" fill="url(#crownGoldGradient)" stroke="#fff" stroke-width="0.8" />
+              <circle cx="60" cy="6" r="4.5" fill="#f48fb1" stroke="#ffe29a" stroke-width="1.2" class="tiara-gem" />
+              <circle cx="14" cy="38" r="3" fill="#f48fb1" stroke="#ffe29a" stroke-width="1" />
+              <circle cx="106" cy="38" r="3" fill="#f48fb1" stroke="#ffe29a" stroke-width="1" />
+              <circle cx="34" cy="20" r="2.8" fill="#ffe29a" stroke="#fff" stroke-width="0.8" />
+              <circle cx="86" cy="20" r="2.8" fill="#ffe29a" stroke="#fff" stroke-width="0.8" />
+              <circle cx="60" cy="24" r="2.4" fill="#ffffff" />
+              <defs>
+                <linearGradient id="crownGoldGradient" x1="14" y1="6" x2="106" y2="38" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f6c86e" />
+                  <stop offset="50%" stop-color="#fff2c6" />
+                  <stop offset="100%" stop-color="#e59866" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <p class="sub-title intro-text-1">My special one has a birthday today...</p>
+          <h1 class="main-title intro-name">LEETHIYAL 💝</h1>
+          <p class="intro-queen-tag">Queen of in my heart 💌</p>
+          <p class="lead-text intro-text-2">I made a little something just for you... 💝</p>
+
+          <div class="intro-btn-wrapper">
+            <button id="btn-start" class="btn-cinematic" type="button" aria-label="Tap to begin birthday surprise">
+              <span>Tap to Begin ✨</span>
+            </button>
+            <p id="dodge-hint" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 2: TYPEWRITER MESSAGE
+           ========================================== -->
+      <section id="screen-2" class="screen" aria-label="Typewriter Birthday Message">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <p class="sub-title">To the love of my life...</p>
+          <div class="typewriter-box" aria-live="polite">
+            <p id="typewriter-line-1" class="typewriter-line"></p>
+            <p id="typewriter-line-2" class="typewriter-line"></p>
+            <p id="typewriter-line-3" class="typewriter-line"></p>
+            <p id="typewriter-line-4" class="typewriter-line" style="color: var(--accent-gold); font-weight: 600;"></p>
+          </div>
+          <div class="btn-wrapper">
+            <button id="btn-screen2-next" class="btn-cinematic" type="button" style="display: none;">
+              <span>Continue ✨</span>
+            </button>
+            <p id="dodge-hint-screen2" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 3: BIRTHDAY CAKE & CANDLE
+           ========================================== -->
+      <section id="screen-3" class="screen" aria-label="Birthday Cake Celebration">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <!-- STAGE 1: Love Spark Tracking Game (Interactive Unlock Quest) -->
+          <div id="cake-game-stage" class="cake-game-stage">
+            <span class="game-quest-badge">👑 ROYAL QUEST 👑</span>
+            <h2 class="main-title" style="font-size: clamp(1.8rem, 5.5vw, 2.7rem); margin-bottom: 0.35rem;">
+              Track The Love Sparks ✨
+            </h2>
+            <p class="sub-title" style="margin-bottom: 1.25rem;">
+              Track & tap 5 floating sparks to unlock Leethiyal's birthday cake! 💝
+            </p>
+
+            <!-- Spark Progress HUD -->
+            <div class="spark-hud">
+              <div class="spark-hud-header">
+                <span class="spark-counter-text">Sparks Tracked: <strong id="sparks-collected-num">0</strong> / 5</span>
+                <span id="spark-status-icon" class="spark-status-badge">🕯️ Locked</span>
+              </div>
+              <div class="spark-progress-track">
+                <div id="spark-progress-bar" class="spark-progress-bar" style="width: 0%;"></div>
+              </div>
+              <p id="spark-whisper-msg" class="spark-whisper-msg" aria-live="polite">
+                Tap the drifting sparks to ignite the royal candles... ✨
+              </p>
+            </div>
+
+            <!-- Interactive Spark Arena -->
+            <div id="spark-arena" class="spark-arena" aria-label="Interactive spark tracking arena">
+              <!-- Radar Background Waves -->
+              <div class="radar-circle radar-1" aria-hidden="true"></div>
+              <div class="radar-circle radar-2" aria-hidden="true"></div>
+              <div class="radar-sweep-beam" aria-hidden="true"></div>
+              <div id="sparks-container" class="sparks-container"></div>
+            </div>
+
+            <button type="button" id="btn-skip-spark-game" class="btn-skip-game">
+              Skip to Cake 🎂
+            </button>
+          </div>
+
+          <!-- STAGE 2: Birthday Cake Celebration (Revealed when unlocked) -->
+          <div id="cake-celebration-stage" class="cake-celebration-stage" style="display: none;">
+            <p class="sub-title">Happy Birthday My Queen</p>
+            <h2 class="main-title" style="font-size: clamp(2rem, 6vw, 3.4rem); margin-bottom: 0.5rem;">
+              LEETHIYAL 💝
+            </h2>
+            <p id="wish-status" class="wish-status">Make a wish, my love... ✨</p>
+
+            <!-- Realistic Cake created entirely with HTML/CSS -->
+            <div class="cake-stage" aria-label="Realistic birthday cake illustration">
+              <!-- Candle Illumination Halo -->
+              <div id="candle-halo" class="candle-halo" aria-hidden="true"></div>
+
+              <!-- Floating Fairy Motes around cake -->
+              <div class="cake-fairy-motes" aria-hidden="true">
+                <span class="mote m-1">✦</span>
+                <span class="mote m-2">✧</span>
+                <span class="mote m-3">✦</span>
+                <span class="mote m-4">✧</span>
+              </div>
+
+              <!-- Candles Row -->
+              <div class="candles-row">
+                <div class="candle">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame"></div>
+                  <div class="smoke-puff"></div>
+                </div>
+                <div class="candle">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame"></div>
+                  <div class="smoke-puff"></div>
+                </div>
+                <div class="candle">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame"></div>
+                  <div class="smoke-puff"></div>
+                </div>
+              </div>
+
+              <!-- Cake Top Tier -->
+              <div class="cake-tier tier-top">
+                <div class="cream-row">
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                </div>
+                <div class="frosting-drips">
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                </div>
+                <div class="gold-filigree-swirls"></div>
+                <div class="gold-sprinkles"></div>
+              </div>
+
+              <!-- Cake Bottom Tier -->
+              <div class="cake-tier tier-bottom">
+                <div class="cream-row">
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                  <div class="cream-piping"></div>
+                </div>
+                <div class="frosting-drips">
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                  <div class="drip"></div>
+                </div>
+                <div class="gold-filigree-swirls"></div>
+                <div class="gold-sprinkles"></div>
+              </div>
+
+              <!-- Cake Golden Plate & Stand -->
+              <div class="cake-plate"></div>
+              <div class="plate-stand"></div>
+            </div>
+
+            <!-- Royal Birthday Gift Presentation: Gold Jimikki Kammal (Presented when cake is cut) -->
+            <div id="jimikki-presentation" class="jimikki-presentation" style="display: none;" aria-live="polite">
+              <span class="jimikki-gift-badge">🎁 ROYAL BIRTHDAY PRESENT 🎁</span>
+              <h3 class="jimikki-gift-title">Gold Jimikki For My Queen 💫</h3>
+              <p class="jimikki-gift-subtitle">
+                A special pair of Jimikki Kammal for Leethiyal — made to dance with your every smile! 🌸
+              </p>
+
+              <!-- Luxury Velvet Earring Display Case -->
+              <div id="jimikki-case" class="jimikki-case" role="button" tabindex="0" aria-label="Interactive Jimikki Kammal gift box">
+                <div class="jimikki-case-glow" aria-hidden="true"></div>
+                <div class="jimikki-velvet-cushion">
+                  <!-- Pair of Jimikki Kammal (Left and Right) -->
+                  <div class="jimikki-pair">
+                    <!-- Left Jimikki -->
+                    <div class="jimikki-earring left-earring" aria-label="Left Jimikki Kammal">
+                      <svg class="jimikki-svg" viewBox="0 0 110 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <linearGradient id="jimikkiGoldGrad" x1="15" y1="20" x2="95" y2="150" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#fff5cc"/>
+                            <stop offset="35%" stop-color="#f6c86e"/>
+                            <stop offset="70%" stop-color="#d48f1e"/>
+                            <stop offset="100%" stop-color="#fff0aa"/>
+                          </linearGradient>
+                          <radialGradient id="rubyGemGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ff4081"/>
+                            <stop offset="60%" stop-color="#c2185b"/>
+                            <stop offset="100%" stop-color="#880e4f"/>
+                          </radialGradient>
+                          <radialGradient id="pearlGrad" cx="35%" cy="35%" r="65%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="60%" stop-color="#f5efe0"/>
+                            <stop offset="100%" stop-color="#e0d4be"/>
+                          </radialGradient>
+                        </defs>
+
+                        <!-- Top Ear Stud (Floral Thodu with Ruby Center) -->
+                        <g class="jimikki-stud">
+                          <circle cx="55" cy="22" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="64" cy="26" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="67" cy="35" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="64" cy="44" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="55" cy="48" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="46" cy="44" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="43" cy="35" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="46" cy="26" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="55" cy="35" r="11" fill="url(#jimikkiGoldGrad)" stroke="#ffe29a" stroke-width="1"/>
+                          <circle cx="55" cy="35" r="7" fill="url(#rubyGemGrad)" stroke="#ffffff" stroke-width="1.2"/>
+                          <circle cx="53" cy="33" r="2" fill="#ffffff" opacity="0.9"/>
+                        </g>
+
+                        <!-- Hanging Chain & Bell Group (Sways) -->
+                        <g class="jimikki-bell-group sway-left">
+                          <path d="M55 46 L55 58" stroke="url(#jimikkiGoldGrad)" stroke-width="3" stroke-linecap="round"/>
+                          <circle cx="55" cy="58" r="3.5" fill="url(#rubyGemGrad)" stroke="#ffd54f" stroke-width="1"/>
+
+                          <!-- Jimikki Dome Cap -->
+                          <path d="M49 61 C49 57, 61 57, 61 61 Z" fill="url(#jimikkiGoldGrad)"/>
+                          <!-- Main Bell Dome -->
+                          <path d="M26 95 C26 66, 84 66, 84 95 L84 99 C84 102, 26 102, 26 99 Z" fill="url(#jimikkiGoldGrad)" stroke="#ffe599" stroke-width="1.2"/>
+                          <!-- Engraved Filigree Bands on Dome -->
+                          <path d="M30 84 C38 73, 72 73, 80 84" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="none"/>
+                          <path d="M27 92 C36 82, 74 82, 83 92" stroke="#d48f1e" stroke-width="1.5" fill="none"/>
+                          <!-- Center Ruby Accent on Dome -->
+                          <circle cx="55" cy="79" r="4" fill="url(#rubyGemGrad)" stroke="#fff" stroke-width="0.8"/>
+                          <!-- Scalloped Gold Lace at bottom of dome -->
+                          <path d="M26 99 Q30 103 34 99 Q38 103 42 99 Q46 103 50 99 Q54 103 58 99 Q62 103 66 99 Q70 103 74 99 Q78 103 82 99 L84 99" fill="none" stroke="#fff5cc" stroke-width="2.2"/>
+
+                          <!-- Hanging Pearls / Gold Beads (Muthu Drops) -->
+                          <line x1="30" y1="100" x2="30" y2="110" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="30" cy="112" r="3.2" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="38" y1="101" x2="38" y2="114" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="38" cy="116" r="3.5" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="46" y1="101" x2="46" y2="119" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="46" cy="121" r="3.8" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <!-- Center Grand Gold Bead -->
+                          <line x1="55" y1="101" x2="55" y2="126" stroke="url(#jimikkiGoldGrad)" stroke-width="2"/>
+                          <circle cx="55" cy="129" r="5" fill="url(#jimikkiGoldGrad)" stroke="#ffffff" stroke-width="1"/>
+                          <circle cx="55" cy="138" r="3" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="64" y1="101" x2="64" y2="119" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="64" cy="121" r="3.8" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="72" y1="101" x2="72" y2="114" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="72" cy="116" r="3.5" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="80" y1="100" x2="80" y2="110" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="80" cy="112" r="3.2" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+                        </g>
+                      </svg>
+                    </div>
+
+                    <!-- Right Jimikki -->
+                    <div class="jimikki-earring right-earring" aria-label="Right Jimikki Kammal">
+                      <svg class="jimikki-svg" viewBox="0 0 110 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Top Ear Stud (Floral Thodu with Ruby Center) -->
+                        <g class="jimikki-stud">
+                          <circle cx="55" cy="22" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="64" cy="26" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="67" cy="35" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="64" cy="44" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="55" cy="48" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="46" cy="44" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="43" cy="35" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="46" cy="26" r="5" fill="url(#jimikkiGoldGrad)"/>
+                          <circle cx="55" cy="35" r="11" fill="url(#jimikkiGoldGrad)" stroke="#ffe29a" stroke-width="1"/>
+                          <circle cx="55" cy="35" r="7" fill="url(#rubyGemGrad)" stroke="#ffffff" stroke-width="1.2"/>
+                          <circle cx="53" cy="33" r="2" fill="#ffffff" opacity="0.9"/>
+                        </g>
+
+                        <!-- Hanging Chain & Bell Group (Sways) -->
+                        <g class="jimikki-bell-group sway-right">
+                          <path d="M55 46 L55 58" stroke="url(#jimikkiGoldGrad)" stroke-width="3" stroke-linecap="round"/>
+                          <circle cx="55" cy="58" r="3.5" fill="url(#rubyGemGrad)" stroke="#ffd54f" stroke-width="1"/>
+
+                          <!-- Jimikki Dome Cap -->
+                          <path d="M49 61 C49 57, 61 57, 61 61 Z" fill="url(#jimikkiGoldGrad)"/>
+                          <!-- Main Bell Dome -->
+                          <path d="M26 95 C26 66, 84 66, 84 95 L84 99 C84 102, 26 102, 26 99 Z" fill="url(#jimikkiGoldGrad)" stroke="#ffe599" stroke-width="1.2"/>
+                          <!-- Engraved Filigree Bands on Dome -->
+                          <path d="M30 84 C38 73, 72 73, 80 84" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="none"/>
+                          <path d="M27 92 C36 82, 74 82, 83 92" stroke="#d48f1e" stroke-width="1.5" fill="none"/>
+                          <!-- Center Ruby Accent on Dome -->
+                          <circle cx="55" cy="79" r="4" fill="url(#rubyGemGrad)" stroke="#fff" stroke-width="0.8"/>
+                          <!-- Scalloped Gold Lace at bottom of dome -->
+                          <path d="M26 99 Q30 103 34 99 Q38 103 42 99 Q46 103 50 99 Q54 103 58 99 Q62 103 66 99 Q70 103 74 99 Q78 103 82 99 L84 99" fill="none" stroke="#fff5cc" stroke-width="2.2"/>
+
+                          <!-- Hanging Pearls / Gold Beads (Muthu Drops) -->
+                          <line x1="30" y1="100" x2="30" y2="110" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="30" cy="112" r="3.2" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="38" y1="101" x2="38" y2="114" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="38" cy="116" r="3.5" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="46" y1="101" x2="46" y2="119" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="46" cy="121" r="3.8" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <!-- Center Grand Gold Bead -->
+                          <line x1="55" y1="101" x2="55" y2="126" stroke="url(#jimikkiGoldGrad)" stroke-width="2"/>
+                          <circle cx="55" cy="129" r="5" fill="url(#jimikkiGoldGrad)" stroke="#ffffff" stroke-width="1"/>
+                          <circle cx="55" cy="138" r="3" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="64" y1="101" x2="64" y2="119" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="64" cy="121" r="3.8" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="72" y1="101" x2="72" y2="114" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="72" cy="116" r="3.5" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+
+                          <line x1="80" y1="100" x2="80" y2="110" stroke="url(#jimikkiGoldGrad)" stroke-width="1.5"/>
+                          <circle cx="80" cy="112" r="3.2" fill="url(#pearlGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Glinting stars around the jewelry box -->
+                  <div class="jimikki-glints" aria-hidden="true">
+                    <span class="j-glint jg-1">✦</span>
+                    <span class="j-glint jg-2">✧</span>
+                    <span class="j-glint jg-3">✦</span>
+                    <span class="j-glint jg-4">✧</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="jimikki-tap-hint">✦ Tap the Jimikki to watch them sparkle & sway! 💫 ✦</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="btn-wrapper">
+              <button id="btn-blow-candle" class="btn-cinematic" type="button" aria-label="Cut cake and blow candle">
+                <span>Cut Cake & Make a Wish 🎂🕯️</span>
+              </button>
+              <button id="btn-screen3-next" class="btn-cinematic" type="button" style="display: none;" aria-label="Continue after wish">
+                <span>Continue 💝</span>
+              </button>
+              <p id="dodge-hint-screen3" class="dodge-hint" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 4: ROMANTIC MEMORY UI (GLASS CARDS)
+           ========================================== -->
+      <section id="screen-4" class="screen" aria-label="Cherished Memories">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <p class="sub-title">Eternal Love & Memories</p>
+          <h2 class="main-title" style="font-size: clamp(1.8rem, 5.5vw, 3rem);">
+            My Love For You
+          </h2>
+
+          <div class="memory-grid">
+            <div class="memory-card">
+              <div class="card-shimmer-sheen" aria-hidden="true"></div>
+              <span class="memory-card-icon" aria-hidden="true">💝</span>
+              <h3 class="memory-card-title">The Day My Heart Chose You 💝</h3>
+              <p class="memory-card-desc">Out of everyone in this universe, you became my favorite thought, my peace, and my deepest love.</p>
+            </div>
+
+            <div class="memory-card">
+              <div class="card-shimmer-sheen" aria-hidden="true"></div>
+              <span class="memory-card-icon" aria-hidden="true">✨</span>
+              <h3 class="memory-card-title">Your Smile, My Safe Heaven ✨</h3>
+              <p class="memory-card-desc">When you smile at me, all the worries in the world simply vanish into golden starlight.</p>
+            </div>
+
+            <div class="memory-card">
+              <div class="card-shimmer-sheen" aria-hidden="true"></div>
+              <span class="memory-card-icon" aria-hidden="true">🌸</span>
+              <h3 class="memory-card-title">Little Moments With You 🌸</h3>
+              <p class="memory-card-desc">Every laugh we share, every gentle word, and every glance is a treasure I hold closest to my soul.</p>
+            </div>
+
+            <div class="memory-card">
+              <div class="card-shimmer-sheen" aria-hidden="true"></div>
+              <span class="memory-card-icon" aria-hidden="true">👑</span>
+              <h3 class="memory-card-title">Queen Of My Heart 👑</h3>
+              <p class="memory-card-desc">You will forever rule my heart with your kindness, your pure warmth, and your radiant grace.</p>
+            </div>
+
+            <div class="memory-card" style="grid-column: 1 / -1;">
+              <div class="card-shimmer-sheen" aria-hidden="true"></div>
+              <span class="memory-card-icon" aria-hidden="true">💌</span>
+              <h3 class="memory-card-title">My Forever Promise 💝</h3>
+              <p class="memory-card-desc">No matter where life takes us, my love for you will only grow deeper, stronger, and more beautiful each day.</p>
+            </div>
+          </div>
+
+          <div class="btn-wrapper">
+            <button id="btn-screen4-next" class="btn-cinematic" type="button">
+              <span>Continue ✨</span>
+            </button>
+            <p id="dodge-hint-screen4" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 5: CINEMATIC MESSAGE
+           ========================================== -->
+      <section id="screen-5" class="screen" aria-label="Cinematic Message">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <div class="cinematic-message-box">
+            <p id="cinema-line-1" class="sub-title cinematic-fade-line">From the depths of my soul...</p>
+            <h2 id="cinema-line-2" class="main-title cinematic-fade-line" style="font-size: clamp(1.8rem, 5vw, 3rem);">
+              I Love You More Than Words Can Say... 💝
+            </h2>
+            <div id="cinema-line-3" class="cinematic-fade-line" style="margin-top: 1.5rem;">
+              <p class="cinematic-quote">“You didn’t just enter my life...”</p>
+              <p class="cinematic-quote" style="margin-top: 0.75rem;">“You became my whole entire world.” 💝</p>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button id="btn-screen5-next" class="btn-cinematic" type="button" style="display: none;">
+              <span>Continue ✨</span>
+            </button>
+            <p id="dodge-hint-screen5" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 6: SECRET LETTER & CSS ENVELOPE
+           ========================================== -->
+      <section id="screen-6" class="screen" aria-label="Secret Birthday Letter">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <p class="sub-title">My Heart In Words</p>
+          <h2 class="main-title" style="font-size: clamp(1.8rem, 5vw, 3rem);">
+            A Love Letter Just For You...
+          </h2>
+
+          <!-- CSS 3D Animated Envelope -->
+          <div class="envelope-stage" aria-label="Animated letter envelope">
+            <div class="envelope-wrapper">
+              <div class="envelope-flap"></div>
+              <div class="envelope-pocket-left"></div>
+              <div class="envelope-pocket-right"></div>
+              <div class="envelope-pocket-bottom"></div>
+              <div class="envelope-seal">💝</div>
+              <div class="letter-paper"></div>
+            </div>
+          </div>
+
+          <div class="btn-wrapper">
+            <button id="btn-open-letter" class="btn-cinematic" type="button">
+              <span>Open Letter 💌</span>
+            </button>
+            <p id="dodge-hint-open-letter" class="dodge-hint" aria-live="polite"></p>
+          </div>
+
+          <!-- Full Opened Letter -->
+          <div class="full-letter-modal" aria-live="polite">
+            <div class="letter-gold-border" aria-hidden="true"></div>
+            <h3 class="letter-heading">My Dearest Love, Leethiyal 💝</h3>
+            <p class="letter-body">My Queen,
+
+Today is the most special day because it’s the day the most beautiful soul was born into this world.
+
+I want you to know how deeply, completely, and endlessly I love you. You bring warmth to my coldest days and light to my darkest nights. Your laughter is my favorite melody, and your happiness is my life’s greatest wish.
+
+Thank you for choosing me, for loving me, and for being the irreplaceable Queen of my heart. 
+
+I promise to stand by your side, to cherish you, to make you laugh, and to love you more with every beat of my heart.
+
+Happy Birthday, my sweet Leethiyal. 💝
+
+Forever & Always yours,
+With all my love and whole soul. ✨</p>
+            <p class="letter-sign">Forever Yours, 💝</p>
+          </div>
+
+          <div class="btn-wrapper" style="margin-top: 1.5rem;">
+            <button id="btn-screen6-next" class="btn-cinematic" type="button" style="display: none;">
+              <span>Continue ✨</span>
+            </button>
+            <p id="dodge-hint-screen6" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 7: ROSE PETAL ANIMATION & POETRY
+           ========================================== -->
+      <section id="screen-7" class="screen" aria-label="Rose Petal Poetry">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <p class="sub-title">Eternal whispers of love</p>
+          <div style="margin: 2.5rem 0 3rem;">
+            <p class="lead-text" style="font-size: clamp(1.15rem, 4vw, 1.6rem); color: #fff; margin-bottom: 1.25rem;">
+              In a sky full of stars, my eyes only search for you...
+            </p>
+            <p class="lead-text" style="font-size: clamp(1.15rem, 4vw, 1.6rem); color: var(--accent-soft-pink); margin-bottom: 1.25rem;">
+              You are the love story my heart always dreamed of writing...
+            </p>
+            <p class="lead-text" style="font-size: clamp(1.25rem, 4.5vw, 1.85rem); color: var(--accent-gold); font-family: var(--font-serif); font-style: italic;">
+              Forever my Queen, today and for all eternity. 💝
+            </p>
+          </div>
+          <div class="btn-wrapper">
+            <button id="btn-screen7-next" class="btn-cinematic" type="button">
+              <span>Celebrate 🎂</span>
+            </button>
+            <p id="dodge-hint-screen7" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SCREEN 8: FINAL CELEBRATION
+           ========================================== -->
+      <section id="screen-8" class="screen" aria-label="Grand Birthday Celebration">
+        <div class="glass-panel royal-panel">
+          <div class="panel-ornament tl" aria-hidden="true">✦</div>
+          <div class="panel-ornament tr" aria-hidden="true">✦</div>
+          <div class="panel-ornament bl" aria-hidden="true">✦</div>
+          <div class="panel-ornament br" aria-hidden="true">✦</div>
+
+          <span class="final-hero-badge">🎂 HAPPY BIRTHDAY TO MY LOVE 🎂</span>
+          <h1 class="final-name-glamour">LEETHIYAL 💝</h1>
+
+          <ul class="final-wishes-list">
+            <li class="final-wish-item">To the girl who owns my entire heart and soul.</li>
+            <li class="final-wish-item">May our love keep blooming more beautifully every year.</li>
+            <li class="final-wish-item">May you always know how unconditionally you are loved.</li>
+            <li class="final-wish-item" style="color: var(--accent-gold); margin-top: 1rem; font-weight: 600;">
+              My Queen. My Forever. ✨
+            </li>
+          </ul>
+
+          <!-- Interactive Royal Heart Ring Box with Unlock Mini-Game -->
+          <div class="royal-ring-box-wrapper" aria-label="Interactive royal heart ring box">
+            
+            <!-- STAGE 1: Love Key Mini-Game (Lock on the Heart Box) -->
+            <div id="ring-unlock-game" class="ring-unlock-game">
+              <span class="ring-quest-pill">🔐 ROYAL LOVE LOCK 🔐</span>
+              <h3 class="ring-game-title">Unlock My Heart's Promise ✨</h3>
+              <p class="ring-game-desc">
+                Tap all 3 golden keys to unlock Leethiyal’s special surprise... 💖
+              </p>
+
+              <!-- 3 Interactive Floating Love Keys -->
+              <div class="ring-keys-container" id="ring-keys-container">
+                <button type="button" class="love-key-item" data-key-index="0" aria-label="Key 1: Pure Trust">
+                  <span class="key-icon">🗝️</span>
+                  <span class="key-label">Pure Trust</span>
+                </button>
+                <button type="button" class="love-key-item" data-key-index="1" aria-label="Key 2: Endless Joy">
+                  <span class="key-icon">🗝️</span>
+                  <span class="key-label">Endless Joy</span>
+                </button>
+                <button type="button" class="love-key-item" data-key-index="2" aria-label="Key 3: Forever Love">
+                  <span class="key-icon">🗝️</span>
+                  <span class="key-label">Forever Love</span>
+                </button>
+              </div>
+
+              <!-- Love Lock Status HUD -->
+              <div class="ring-lock-hud">
+                <div class="ring-lock-track">
+                  <div id="ring-lock-bar" class="ring-lock-bar" style="width: 0%;"></div>
+                </div>
+                <p id="ring-lock-status" class="ring-lock-status" aria-live="polite">
+                  Tap the 3 keys above to unlock the box... 🔒
+                </p>
+              </div>
+
+              <button type="button" id="btn-quick-unlock-ring" class="btn-quick-unlock">
+                Quick Unlock 🗝️
+              </button>
+            </div>
+
+            <!-- STAGE 2: The Heart Box (Tightly closed and locked until keys are used) -->
+            <p id="ring-box-instruction" class="ring-box-instruction" style="display: none;">
+              ✦ Box Unlocked! Tap the heart to reveal the ring 💍 ✦
+            </p>
+
+            <div id="heart-ring-box" class="heart-ring-box locked" role="button" tabindex="0" aria-label="Heart ring box">
+              <!-- Radial Glow and Aura Rings -->
+              <div class="ring-aura-glow" aria-hidden="true"></div>
+              <div class="ring-shockwave ring-sw-1" aria-hidden="true"></div>
+              <div class="ring-shockwave ring-sw-2" aria-hidden="true"></div>
+
+              <!-- Ring Box Bottom / Velvet Interior Base (Completely hides the ring until opened) -->
+              <div class="ring-box-base" aria-hidden="true">
+                <div class="velvet-interior">
+                  <div class="velvet-crease"></div>
+
+                  <!-- Diamond Ring (Strictly hidden until unlocked & opened!) -->
+                  <div id="diamond-ring-presentation" class="diamond-ring-presentation" style="display: none;">
+                    <div class="diamond-halo-beam"></div>
+                    <svg class="diamond-ring-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Golden Ring Band -->
+                      <ellipse cx="50" cy="64" rx="30" ry="22" stroke="url(#goldBandGrad)" stroke-width="6" fill="none"/>
+                      <ellipse cx="50" cy="62" rx="28" ry="20" stroke="rgba(255, 255, 255, 0.55)" stroke-width="1.5" fill="none"/>
+                      
+                      <!-- Crown prongs setting -->
+                      <path d="M40 40 L50 46 L60 40 L56 50 L44 50 Z" fill="url(#goldBandGrad)" stroke="#f6c86e" stroke-width="0.8"/>
+                      
+                      <!-- Brilliant Cut Solitaire Diamond -->
+                      <polygon points="50,14 64,28 50,42 36,28" fill="url(#diamondFacetGrad1)" stroke="#ffffff" stroke-width="1.2"/>
+                      <polygon points="50,14 57,28 50,42" fill="#ffffff" opacity="0.85"/>
+                      <polygon points="43,28 57,28 50,42" fill="#b3e5fc" opacity="0.9"/>
+                      <polygon points="36,28 50,14 50,42" fill="#e1f5fe" opacity="0.6"/>
+                      <polygon points="64,28 50,14 50,42" fill="#81d4fa" opacity="0.5"/>
+                      
+                      <!-- Diamond Facet Reflection Glimmer -->
+                      <circle cx="50" cy="26" r="3.5" fill="#ffffff" class="diamond-sparkle-center"/>
+                      <path d="M50 14 L50 42" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+                      <path d="M36 28 L64 28" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+
+                      <defs>
+                        <linearGradient id="goldBandGrad" x1="20" y1="40" x2="80" y2="86" gradientUnits="userSpaceOnUse">
+                          <stop offset="0%" stop-color="#fff2c6"/>
+                          <stop offset="35%" stop-color="#f6c86e"/>
+                          <stop offset="70%" stop-color="#d48f1e"/>
+                          <stop offset="100%" stop-color="#fff2c6"/>
+                        </linearGradient>
+                        <linearGradient id="diamondFacetGrad1" x1="36" y1="14" x2="64" y2="42" gradientUnits="userSpaceOnUse">
+                          <stop offset="0%" stop-color="#ffffff"/>
+                          <stop offset="30%" stop-color="#e0f7fa"/>
+                          <stop offset="65%" stop-color="#80deea"/>
+                          <stop offset="100%" stop-color="#ffffff"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+
+                    <!-- Orbiting Diamond Sparkles -->
+                    <div class="ring-glint-sparks" aria-hidden="true">
+                      <span class="ring-glint rg-1">✦</span>
+                      <span class="ring-glint rg-2">✧</span>
+                      <span class="ring-glint rg-3">✦</span>
+                      <span class="ring-glint rg-4">✧</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ring Box Heart Lid (Flips open in 3D ONLY when unlocked) -->
+              <div class="ring-box-lid" id="ring-box-lid">
+                <div class="lid-heart-shell">
+                  <div class="lid-heart-velvet">
+                    <span class="lid-heart-glyph">💝</span>
+                    <span id="lid-lock-crest" class="lid-lock-crest">🔒</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reveal Message underneath ring box -->
+            <p id="ring-reveal-caption" class="ring-reveal-caption" aria-live="polite">
+              A promise of forever for my Queen... Leethiyal, will you stay by my side forever? 💍💖
+            </p>
+          </div>
+
+          <p class="sub-title" style="font-size: clamp(1.1rem, 3.5vw, 1.45rem); margin-bottom: 2rem;">
+            Happy Birthday, Queen of my heart 💝
+          </p>
+
+          <div class="btn-wrapper">
+            <button id="btn-replay" class="btn-cinematic" type="button" aria-label="Replay celebration experience">
+              <span>Experience Again ↺</span>
+            </button>
+            <p id="dodge-hint-replay" class="dodge-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Vanilla JavaScript -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>

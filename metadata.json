@@ -1,0 +1,6 @@
+{
+  "name": "Vera Level Birthday Wishes",
+  "description": "Create extraordinary, interactive birthday surprise experiences with musical melody, candle blowing, cake cutting, custom wishes in Tamil & English, and shareable surprise links.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
